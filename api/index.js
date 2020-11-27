@@ -1,5 +1,5 @@
 const app = require("express")();
-
+const axios = require("axios");
 // Pokedex API
 var Pokedex = require("pokedex-promise-v2");
 var P = new Pokedex();
@@ -12,6 +12,7 @@ app.get("/fetch_pkmn_details/:name", async (req, res) => {
     `/api/v2/pokemon-species/${pokemon_name}`
   ];
 
+  // Fetch Pokemon Details
   let pokemonDetails = await P.resource(pkmn_endpoints).then(function(
     response
   ) {
@@ -25,7 +26,9 @@ app.get("/fetch_pkmn_details/:name", async (req, res) => {
       stats,
       types,
       moves,
-      sprites: { front_default }
+      sprites: {
+        other: { "official-artwork": officialArtwork }
+      }
     } = response[0];
 
     let {
@@ -41,7 +44,13 @@ app.get("/fetch_pkmn_details/:name", async (req, res) => {
 
     return {
       abilities,
-      pokemon: { name, id, weight, height, front_default },
+      pokemon: {
+        name,
+        id,
+        weight,
+        height,
+        front_default: officialArtwork.front_default
+      },
       stats,
       types,
       moves,
@@ -97,6 +106,30 @@ app.get("/fetch_pkmn_details/:name", async (req, res) => {
     // Combine all responses to one single response
     res.json({ ...pokemonDetails, pokemonEvolution, pkmnStrengthWeakness });
   });
+});
+
+// Orig
+app.get("/pagination/:page/", async (req, res) => {
+  let { page } = req.params;
+  let limit = req.query.limit || 20; // default limit will be 10
+  let offset = 0 + (page - 1) * limit;
+
+  axios
+    .get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
+    .then(function(response) {
+      let resultsPkmn = response.data.results;
+
+      resultsPkmn.map(el => {
+        let urlArray = el.url.split("/");
+        let pokemonId = urlArray.splice(urlArray.length - 2, 1);
+
+        el.url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonId}.png`;
+
+        el.pokemon_details = `localhost:3000/api/fetch_pkmn_details/${el.name}`;
+      });
+
+      res.json(response.data);
+    });
 });
 
 module.exports = { path: "/api", handler: app };
