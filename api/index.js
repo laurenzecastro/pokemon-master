@@ -123,6 +123,7 @@ app.get("/pagination/:page/", async (req, res) => {
         let urlArray = el.url.split("/");
         let pokemonId = urlArray.splice(urlArray.length - 2, 1);
 
+        // Add pokemon avatar and api endpoint for single pokemon detail
         el.url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonId}.png`;
 
         el.pokemon_details = `localhost:3000/api/fetch_pkmn_details/${el.name}`;
