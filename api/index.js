@@ -125,7 +125,7 @@ app.get("/pagination/:page/", async (req, res) => {
       // to get the total pages, divide the total count by the limit
       let totalPage = count / parseInt(limit);
       response.data.totalPages = parseInt(totalPage) + 1;
-      response.data.currPage = page;
+      response.data.currPage = parseInt(page);
 
       resultsPkmn.map(el => {
         let urlArray = el.url.split("/");
