@@ -1,7 +1,7 @@
 <template>
   <header>
     <h1 class="title">
-      pokemon-master
+      My Pokedex
     </h1>
   </header>
 </template>

@@ -1,10 +1,18 @@
 <template>
   <div class="container">
-    <Pagination :pokemonData="pokemonData" @emit-page-data="emitFetch" />
-    <div v-for="(pokemon, i) in pokemonData.results" :key="i">
-      <span>{{ pokemon.name }}</span>
-      <img :src="pokemon.url" style="height:150px" />
+    <div class="pokemon-list">
+      <div
+        v-for="(pokemon, i) in pokemonData.results"
+        :key="i"
+        class="pokemon-div"
+      >
+        <div class="image-container">
+          <img :src="pokemon.url" />
+        </div>
+        <span class="pokemon-name">{{ pokemon.name }}</span>
+      </div>
     </div>
+    <Pagination :pokemonData="pokemonData" @emit-page-data="emitFetch" />
   </div>
 </template>
 
@@ -34,7 +42,6 @@ export default {
   methods: {
     emitFetch({ page, reset }) {
       this.page = page;
-      console.log(page, reset);
     }
   },
 

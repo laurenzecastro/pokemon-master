@@ -1,1 +1,11 @@
 @import "pagination";
+@import "pokemon";
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+@mixin pokemon() {
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #ececec;
+  @include pokemon();
+}

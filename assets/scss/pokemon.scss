@@ -1,0 +1,63 @@
+.pokemon-list {
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+
+  // Styles
+
+  .pokemon-div {
+    background: white;
+    border-radius: 19px;
+    margin: 20px auto;
+    padding: 1%;
+    width: 60%;
+    cursor: pointer;
+    -webkit-box-shadow: 10px 10px 17px 0px rgba(0, 0, 0, 0.34);
+    -moz-box-shadow: 10px 10px 17px 0px rgba(0, 0, 0, 0.34);
+    box-shadow: 10px 10px 17px 0px rgba(0, 0, 0, 0.34);
+    animation-name: place;
+    animation-duration: 0.2s;
+
+    // Actions
+
+    &:hover {
+      transform: translateY(-10px);
+      animation-name: lift;
+      animation-duration: 0.2s;
+    }
+
+    @keyframes place {
+      from {
+        transform: translateY(-10px);
+      }
+      to {
+        transform: none;
+      }
+    }
+
+    @keyframes lift {
+      from {
+        transform: none;
+      }
+      to {
+        transform: translateY(-10px);
+      }
+    }
+
+    .pokemon-name {
+      display: block;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .image-container {
+      display: flex;
+      align-items: center; /*vertical align*/
+      justify-content: center; /*horizontal align*/
+
+      img {
+        height: 200px;
+      }
+    }
+  }
+}
