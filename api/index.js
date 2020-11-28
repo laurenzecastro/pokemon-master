@@ -86,7 +86,9 @@ app.get("/fetch_pkmn_details/:name", async (req, res) => {
 
       return { chain };
     })
-    .catch();
+    .catch(err => {
+      throw err;
+    });
 
   // Get the pokemon type
   let { types } = pokemonDetails;
@@ -111,13 +113,19 @@ app.get("/fetch_pkmn_details/:name", async (req, res) => {
 // Orig
 app.get("/pagination/:page/", async (req, res) => {
   let { page } = req.params;
-  let limit = req.query.limit || 20; // default limit will be 10
+  let limit = parseInt(req.query.limit) || 20; // default limit will be 10
   let offset = 0 + (page - 1) * limit;
 
   axios
     .get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
     .then(function(response) {
       let resultsPkmn = response.data.results;
+      let { count } = response.data;
+
+      // to get the total pages, divide the total count by the limit
+      let totalPage = count / parseInt(limit);
+      response.data.totalPages = parseInt(totalPage) + 1;
+      response.data.currPage = page;
 
       resultsPkmn.map(el => {
         let urlArray = el.url.split("/");
@@ -125,7 +133,6 @@ app.get("/pagination/:page/", async (req, res) => {
 
         // Add pokemon avatar and api endpoint for single pokemon detail
         el.url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonId}.png`;
-
         el.pokemon_details = `localhost:3000/api/fetch_pkmn_details/${el.name}`;
       });
 
