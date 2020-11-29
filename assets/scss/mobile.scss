@@ -1,0 +1,39 @@
+// For mobile
+@media only screen and(max-width:480px) {
+  .pokemon-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+// For tab ( > 480)
+@media only screen and(min-width:481px) {
+  .pokemon-list {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+// For small desktop size ( > 768px )
+@media only screen and(min-width:769px) {
+  .pokemon-list {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+// For mid desktop size ( > 1024px )
+@media only screen and(min-width:1025px) {
+  .pokemon-list {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+// For big desktop size ( > 1200 )
+@media only screen and(min-width:1201px) {
+  .pokemon-list {
+    grid-template-columns: repeat(5, 1fr) !important;
+  }
+}

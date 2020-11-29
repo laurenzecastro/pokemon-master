@@ -1,16 +1,13 @@
 .pokemon-list {
   display: grid;
   margin-top: 20px;
-  grid-template-columns: 20% 20% 20% 20% 20%;
-
   // Styles
-
   .pokemon-div {
     background: white;
     border-radius: 19px;
     margin: 20px auto;
     padding: 1%;
-    width: 60%;
+    width: 220px;
     text-decoration: none;
     cursor: pointer;
     -webkit-box-shadow: 10px 10px 17px 0px rgba(0, 0, 0, 0.34);

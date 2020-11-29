@@ -1,5 +1,6 @@
 @import "pagination";
 @import "pokemon";
+@import "mobile";
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 @mixin pokemon() {
@@ -7,6 +8,7 @@
 }
 body {
   background: #ececec;
+  margin: 0;
   @include pokemon();
 }
 
@@ -32,3 +34,5 @@ header {
     }
   }
 }
+
+// For mobile
