@@ -1,6 +1,8 @@
 @import "pagination";
 @import "pokemon";
+@import "single_pokemon";
 @import "mobile";
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 @mixin pokemon() {
@@ -17,6 +19,11 @@ header {
   margin: auto 4%;
   justify-content: space-between;
 
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
   div.search {
     border: none;
     border-radius: 10px;
@@ -32,6 +39,16 @@ header {
       -moz-box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.34);
       box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.34);
     }
+  }
+}
+
+.image-container {
+  display: flex;
+  align-items: center; /*vertical align*/
+  justify-content: center; /*horizontal align*/
+
+  img {
+    height: 200px;
   }
 }
 

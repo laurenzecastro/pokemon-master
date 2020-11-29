@@ -15,13 +15,21 @@ API Used: [pokeapi](https://pokeapi.co/api/v2/pokemon/)
 
 `https://pokeapi.co/api/v2/pokemon/pikachu/`
 
+card 1
+
 1. Name `name` `weight` `height` `id` **done**
 2. Picture `sprites.front_default` **done**
+3. Abilities `abilities` **done**
+4. Evolution Details `https://pokeapi.co/api/v2/evolution-chain/1/` `chain` **done**
+5. Type(s) `types` **done**
+
+card 2
+
 3. About Details `https://pokeapi.co/api/v2/pokemon-species/25/` `flavor_text_entries` **done**
 4. Stats `stats` **done**
-5. Type(s) `types` **done**
-6. Abilities `abilities` **done**
-7. Evolution Details `https://pokeapi.co/api/v2/evolution-chain/1/` `chain` **done**
+
+card 3
+
 8. Strengths & Weakness (by Type) **done**
 9. Moves `moves` **done**
 

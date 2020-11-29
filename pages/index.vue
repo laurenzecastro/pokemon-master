@@ -32,6 +32,7 @@ export default {
   watch: { page: "$fetch" },
 
   async fetch() {
+    this.loading = true;
     this.pokemonData = await fetch(
       `http://localhost:3000/api/pagination/${this.page}`
     ).then(res => res.json());

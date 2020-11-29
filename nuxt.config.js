@@ -38,5 +38,10 @@ export default {
 
   server: {
     host: "0.0.0.0" // for dev mobile viewiing
+  },
+
+  loading: {
+    color: "darkslategray",
+    height: "8px"
   }
 };

@@ -1,7 +1,9 @@
 <template>
   <header>
     <h1 class="title">
-      My Pokedex
+      <nuxt-link to="/">
+        My Pokedex
+      </nuxt-link>
     </h1>
 
     <div class="search">
