@@ -4,7 +4,15 @@
       My Pokedex
     </h1>
 
-    <input type="text" name="" id="" />
+    <div class="search">
+      <input
+        type="text"
+        name=""
+        id=""
+        class="search-box"
+        placeholder="Search pokemon"
+      />
+    </div>
   </header>
 </template>
 
