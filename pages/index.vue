@@ -1,16 +1,13 @@
 <template>
   <div class="container">
     <div class="pokemon-list">
-      <div
+      <Pokemon
         v-for="(pokemon, i) in pokemonData.results"
-        :key="i"
         class="pokemon-div"
+        :key="i"
+        :pokemonData="pokemon"
       >
-        <div class="image-container">
-          <img :src="pokemon.url" />
-        </div>
-        <span class="pokemon-name">{{ pokemon.name }}</span>
-      </div>
+      </Pokemon>
     </div>
     <Pagination :pokemonData="pokemonData" @emit-page-data="emitFetch" />
   </div>
@@ -18,6 +15,7 @@
 
 <script>
 import Pagination from "@/components/Pagination";
+import Pokemon from "@/components/Pokemon";
 
 import axios from "axios";
 

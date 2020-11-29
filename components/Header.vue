@@ -3,6 +3,8 @@
     <h1 class="title">
       My Pokedex
     </h1>
+
+    <input type="text" name="" id="" />
   </header>
 </template>
 
