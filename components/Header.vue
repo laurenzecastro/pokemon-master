@@ -9,17 +9,24 @@
     <div class="search">
       <input
         type="text"
-        name=""
-        id=""
         class="search-box"
         placeholder="Search pokemon"
+        @input="$nuxt.$emit('searchKeyword', $event)"
       />
     </div>
   </header>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Header",
+
+  data() {
+    return {
+      searchKeyword: ""
+    };
+  }
+};
 </script>
 
 <style></style>
