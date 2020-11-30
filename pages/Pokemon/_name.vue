@@ -57,7 +57,9 @@
             :key="option.flavor_text"
             :value="option.flavor_text"
           >
-            Pokemon {{ option.version.name }}
+            Pokemon {{ option.version.name }} - Language[{{
+              option.language.name
+            }}]
           </option>
         </select>
       </div>
@@ -141,6 +143,13 @@ export default {
     return {
       selected: "Select the pokemon version"
     };
+  },
+
+  methods: {
+    parsedLanguage(lang) {
+      return new Intl.DisplayNames(["en"], { type: "language" }).of(lang);
+      // return `[${languageNames.of(lang)}]`;
+    }
   },
 
   async asyncData({ params, $axios }) {
