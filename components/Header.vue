@@ -12,6 +12,7 @@
         class="search-box"
         placeholder="Search pokemon"
         @input="debounceSearch($event)"
+        v-model="searchKeyword"
       />
 
       <div class="search-results" :class="{ active: !isHidden }">
@@ -62,6 +63,7 @@ export default {
     },
 
     debounceSearch($event) {
+      this.searchKeyword = $event.target.value;
       this.isHidden = false;
       this.isSuccess = false;
       this.loadingMessage = "Searching...";
@@ -72,7 +74,7 @@ export default {
 
       //After the timer, call the function
       this.timeOut = setTimeout(() => {
-        this.searchPokemon($event.target.value);
+        this.searchPokemon(this.searchKeyword);
       }, this.timeInterval);
       // }
     }
@@ -85,6 +87,7 @@ export default {
   watch: {
     $route: {
       handler() {
+        this.searchKeyword = "";
         this.isHidden = true;
         this.loadingMessage = "Searching...";
       },

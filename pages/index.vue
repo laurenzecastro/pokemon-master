@@ -33,9 +33,9 @@ export default {
 
   async fetch() {
     this.loading = true;
-    this.pokemonData = await fetch(`api/pagination/${this.page}`).then(res =>
-      res.json()
-    );
+    this.pokemonData = await fetch(
+      `http://localhost:3000/api/pagination/${this.page}`
+    ).then(res => res.json());
   },
 
   methods: {

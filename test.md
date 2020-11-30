@@ -35,24 +35,35 @@ card 3
 
 ### Todos
 
-1. Create new app using your best frontend framework (Vuejs, Reactjs and Angularjs)
-2. Use https://pokeapi.co/api/v2/pokemon/ as your backend / data source
-3. Design your UI make user experience like you are viewing a pokedex in the game or in the cartoon
-4. List page where you can browse and search pokemon (paginate your list)
-5. Detail page on where you view pokemon details and a direct search
+1. Create new app using your best frontend framework (Vuejs, Reactjs and Angularjs) **done**
+
+2. Use https://pokeapi.co/api/v2/pokemon/ as your backend / data source **done**
+
+3. Design your UI make user experience like you are viewing a pokedex in the game or in the cartoon**done**
+
+4. List page where you can browse and search pokemon (paginate your list)**done**
+
+5. Detail page on where you view pokemon details and a direct search**done**
+
 6. Provide test using any test framework (jest, jasminejs or any other test framework you want)
 7. Readme on how to setup and start your application
-8. Implement modular and component based implementation
-9. Make it interactive to user
+8. Implement modular and component based implementation**done**
+
+9. Make it interactive to user**done**
 
 ### Caveats
 
-1. If no result from the api return no result or pokemon cant be found error or text
-2. UI is free form make it the best experience you can think
-3. No theme / scheme required, choose your own color scheme you like
+1. If no result from the api return no result or pokemon cant be found error or text**done**
+
+2. UI is free form make it the best experience you can think**done**
+
+3. No theme / scheme required, choose your own color scheme you like**done**
+
 4. Its a live api so you need to mock the response in the api in your test
-5. Name your variables and files accordingly
-6. Implement some best practice you used.
-7. You can use any packages that can help you develop like pagination or http client
+5. Name your variables and files accordingly**done**
+
+6. Implement some best practice you used.**done**
+
+7. You can use any packages that can help you develop like pagination or http client**done**
 
 ## Goodluck be a pokemon master

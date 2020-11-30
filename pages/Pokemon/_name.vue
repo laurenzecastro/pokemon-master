@@ -64,9 +64,43 @@
     <div id="right-div">
       <div id="strengths-details">
         <h1>Strengths</h1>
+        <div class="listings-container">
+          <div v-for="(item, i) in pkmnStrengthWeakness" :key="i" class="card">
+            <span :class="`element-name type ${item.name}`">{{
+              item.name
+            }}</span>
+
+            <br />
+            <span class="damage-indicator">2x damage to:</span>
+            <Listings :pokemonData="item.double_damage_to" />
+
+            <span class="damage-indicator">1/2 damage from:</span>
+            <Listings :pokemonData="item.half_damage_from" />
+
+            <span class="damage-indicator">No damage from:</span>
+            <Listings :pokemonData="item.no_damage_from" />
+          </div>
+        </div>
       </div>
       <div id="weakness-details">
         <h1>Weakness</h1>
+        <div class="listings-container">
+          <div v-for="(item, i) in pkmnStrengthWeakness" :key="i" class="card">
+            <span :class="`element-name type ${item.name}`">{{
+              item.name
+            }}</span>
+            <br />
+
+            <span class="damage-indicator">2x damage from:</span> <br />
+            <Listings :pokemonData="item.double_damage_from" />
+
+            <span class="damage-indicator">1/2 damage to:</span> <br />
+            <Listings :pokemonData="item.half_damage_to" />
+
+            <span class="damage-indicator">No damage to:</span> <br />
+            <Listings :pokemonData="item.no_damage_to" />
+          </div>
+        </div>
       </div>
       <div id="moves-details">
         <h1>Moves</h1>
@@ -79,6 +113,7 @@
 </template>
 
 <script>
+import Listings from "@/components/reusable/Listings";
 export default {
   name: `Pokemon`,
 
