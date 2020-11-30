@@ -68,7 +68,7 @@ export default {
     },
 
     debounceSearch($event) {
-      this.searchKeyword = $event.target.value;
+      this.searchKeyword = $event.target.value.toLocaleLowerCase();
       this.isHidden = false;
       this.isSuccess = false;
       this.loadingMessage = "Searching...";
