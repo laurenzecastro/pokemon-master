@@ -63,15 +63,19 @@ header {
     height: 30px;
     margin-top: 10px;
     background-color: white;
-    // opacity: 0;
+    opacity: 0;
     width: 100%;
     z-index: 1000;
     right: 0;
     top: 30px;
-    background: #f3f3f3;
+    background: #cecece;
     -webkit-box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.34);
     -moz-box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.34);
     box-shadow: 5px 5px 6px 0px rgba(0, 0, 0, 0.34);
+
+    &.active {
+      opacity: 1 !important;
+    }
   }
 
   h5 {
