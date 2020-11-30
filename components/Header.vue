@@ -13,6 +13,10 @@
         placeholder="Search pokemon"
         @input="$nuxt.$emit('searchKeyword', $event)"
       />
+
+      <div class="search-results">
+        <h5>Pikachu</h5>
+      </div>
     </div>
   </header>
 </template>
