@@ -55,9 +55,27 @@
       <div id="stats-details">
         <h1>Stats</h1>
         <!-- :class="`metrics type ${stats.type.name}`" -->
-        <h5 v-for="(stats, i) in stats" :key="i">
-          {{ stats.stat.name }} - {{ stats.base_stat }}
-        </h5>
+        <div id="stats-container">
+          <div
+            :class="`stats-card ${stats.stat.name}`"
+            v-for="(stats, i) in stats"
+            :key="i"
+          >
+            <h3>
+              {{ stats.base_stat }}
+            </h3>
+            <span>
+              {{ stats.stat.name.toUpperCase() }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div id="moves-details">
+        <h1>Moves</h1>
+        <span class="moves" v-for="(move, i) in moves" :key="i">
+          {{ move.move.name }}
+        </span>
       </div>
     </div>
 
@@ -70,7 +88,6 @@
               item.name
             }}</span>
 
-            <br />
             <span class="damage-indicator">2x damage to:</span>
             <Listings :pokemonData="item.double_damage_to" />
 
@@ -89,24 +106,17 @@
             <span :class="`element-name type ${item.name}`">{{
               item.name
             }}</span>
-            <br />
 
-            <span class="damage-indicator">2x damage from:</span> <br />
+            <span class="damage-indicator">2x damage from:</span>
             <Listings :pokemonData="item.double_damage_from" />
 
-            <span class="damage-indicator">1/2 damage to:</span> <br />
+            <span class="damage-indicator">1/2 damage to:</span>
             <Listings :pokemonData="item.half_damage_to" />
 
-            <span class="damage-indicator">No damage to:</span> <br />
+            <span class="damage-indicator">No damage to:</span>
             <Listings :pokemonData="item.no_damage_to" />
           </div>
         </div>
-      </div>
-      <div id="moves-details">
-        <h1>Moves</h1>
-        <span class="moves" v-for="(move, i) in moves" :key="i">
-          {{ move.move.name }}
-        </span>
       </div>
     </div>
   </div>

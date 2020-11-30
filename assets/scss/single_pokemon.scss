@@ -17,7 +17,7 @@
   color: #fff;
   border-radius: 20px;
   text-transform: uppercase;
-  margin-right: 5px;
+  margin-right: 5px !important;
   font-size: 10px;
 
   &.normal {
@@ -131,6 +131,66 @@
 
   #middle-div {
     @include card();
+
+    #stats-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      .stats-card {
+        @include card();
+        margin: 5% 8px !important;
+
+        text-align: center;
+        color: black;
+
+        h3 {
+          font-size: 40px;
+          margin: 5px 0;
+        }
+
+        span {
+          font-size: 13px;
+          font-weight: bold;
+        }
+
+        &.hp {
+          background: #ff5959;
+        }
+
+        &.attack {
+          background: #f5ac78;
+        }
+
+        &.defense {
+          background: #fae078;
+        }
+
+        &.special-attack {
+          background: #9db7f5;
+        }
+
+        &.special-defense {
+          background: #a7db8d;
+        }
+
+        &.speed {
+          background: #fa92b2;
+        }
+      }
+    }
+
+    #moves-details {
+      .moves {
+        padding: 2px 5px;
+        color: black;
+        border-radius: 20px;
+        text-transform: uppercase;
+        margin-right: 5px;
+        font-size: 10px;
+        background: #ececec;
+        display: inline-block;
+      }
+    }
   }
 
   #right-div {
@@ -165,19 +225,6 @@
       .listing-data {
         margin-bottom: 20px;
         width: 80%;
-      }
-    }
-
-    #moves-details {
-      .moves {
-        padding: 2px 5px;
-        color: black;
-        border-radius: 20px;
-        text-transform: uppercase;
-        margin-right: 5px;
-        font-size: 10px;
-        background: #ececec;
-        display: inline-block;
       }
     }
   }
