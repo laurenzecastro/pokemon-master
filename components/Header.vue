@@ -49,7 +49,7 @@ export default {
   methods: {
     async searchPokemon(keyword) {
       this.searchResult = await this.$axios.$get(
-        `api/fetch_pkmn_details/${keyword}`
+        `${process.env.NUXT_ENV_API_ENDPOINT}api/fetch_pkmn_details/${keyword}`
       );
 
       let { status } = this.searchResult;
