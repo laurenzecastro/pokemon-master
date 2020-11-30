@@ -42,7 +42,20 @@
       margin-bottom: 20px !important;
     }
   }
+
+  .pokemon-div {
+    width: 90% !important ;
+  }
 }
+
+@media only screen and(max-width:800px) {
+  .pagination-block {
+    width: 90% !important;
+    margin-bottom: 30px !important;
+  }
+}
+
+// For
 
 // For tab ( > 480)
 @media only screen and(min-width:481px) {
