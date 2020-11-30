@@ -34,7 +34,7 @@ export default {
   async fetch() {
     this.loading = true;
     this.pokemonData = await fetch(
-      `http://localhost:3000/api/pagination/${this.page}`
+      `${process.env.NUXT_ENV_API_ENDPOINT}api/pagination/${this.page}`
     ).then(res => res.json());
   },
 

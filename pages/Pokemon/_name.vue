@@ -145,7 +145,7 @@ export default {
 
   async asyncData({ params, $axios }) {
     return await $axios.$get(
-      `http://localhost:3000/api/fetch_pkmn_details/${params.name}`
+      `${process.env.NUXT_ENV_API_ENDPOINT}api/fetch_pkmn_details/${params.name}`
     );
   },
 
