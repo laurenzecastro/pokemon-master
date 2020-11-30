@@ -132,6 +132,15 @@
   #middle-div {
     @include card();
 
+    #about-details {
+      .select {
+        width: 100%;
+        padding: 10px 18px;
+        border-radius: 10px;
+        text-transform: capitalize;
+      }
+    }
+
     #stats-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -197,13 +206,13 @@
     @include card();
 
     .listings-container {
-      display: flex;
-      justify-content: space-around;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
 
       .card {
         @include box-shadow();
         margin: 0 2%;
-        width: 40%;
+        width: 80%;
         background: #f1f2f6;
         padding: 20px;
         border-radius: 15px;

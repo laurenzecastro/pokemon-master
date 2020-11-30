@@ -50,6 +50,16 @@
     <div id="middle-div">
       <div id="about-details">
         <h1>About</h1>
+        <h5>{{ parsedAbout }}</h5>
+        <select v-model="selected" class="select">
+          <option
+            v-for="option in about"
+            :key="option.flavor_text"
+            :value="option.flavor_text"
+          >
+            Pokemon {{ option.version.name }}
+          </option>
+        </select>
       </div>
 
       <div id="stats-details">
@@ -127,10 +137,22 @@ import Listings from "@/components/reusable/Listings";
 export default {
   name: `Pokemon`,
 
+  data() {
+    return {
+      selected: "Select the pokemon version"
+    };
+  },
+
   async asyncData({ params, $axios }) {
     return await $axios.$get(
       `http://localhost:3000/api/fetch_pkmn_details/${params.name}`
     );
+  },
+
+  computed: {
+    parsedAbout() {
+      return this.selected.replace(/\f/g, " ");
+    }
   }
 };
 </script>

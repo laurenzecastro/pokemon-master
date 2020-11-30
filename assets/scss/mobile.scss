@@ -30,6 +30,18 @@
       width: 92% !important;
     }
   }
+
+  #stats-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .listings-container {
+    grid-template-columns: 1fr !important;
+
+    .card {
+      margin-bottom: 20px !important;
+    }
+  }
 }
 
 // For tab ( > 480)
