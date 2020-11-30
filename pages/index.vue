@@ -33,8 +33,14 @@ export default {
 
   async fetch() {
     this.loading = true;
+
+    let url =
+      process.env.NUXT_ENV_ENVIRONMENT == "dev"
+        ? "http://localhost:3000/"
+        : "http://lau-pokemon-master.herokuapp.com/";
+
     this.pokemonData = await fetch(
-      `${process.env.NUXT_ENV_API_ENDPOINT}api/pagination/${this.page}`
+      `${url}api/pagination/${this.page}`
     ).then(res => res.json());
   },
 

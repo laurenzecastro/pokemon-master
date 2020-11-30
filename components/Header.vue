@@ -48,8 +48,13 @@ export default {
 
   methods: {
     async searchPokemon(keyword) {
+      let url =
+        process.env.NUXT_ENV_ENVIRONMENT == "dev"
+          ? "http://localhost:3000/"
+          : "http://lau-pokemon-master.herokuapp.com/";
+
       this.searchResult = await this.$axios.$get(
-        `${process.env.NUXT_ENV_API_ENDPOINT}api/fetch_pkmn_details/${keyword}`
+        `${url}api/fetch_pkmn_details/${keyword}`
       );
 
       let { status } = this.searchResult;

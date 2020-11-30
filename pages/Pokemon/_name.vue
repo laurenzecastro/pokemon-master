@@ -144,9 +144,12 @@ export default {
   },
 
   async asyncData({ params, $axios }) {
-    return await $axios.$get(
-      `${process.env.NUXT_ENV_API_ENDPOINT}api/fetch_pkmn_details/${params.name}`
-    );
+    let url =
+      process.env.NUXT_ENV_ENVIRONMENT == "dev"
+        ? "http://localhost:3000/"
+        : "http://lau-pokemon-master.herokuapp.com/";
+
+    return await $axios.$get(`${url}api/fetch_pkmn_details/${params.name}`);
   },
 
   computed: {
