@@ -45,7 +45,7 @@ card 3
 
 5. Detail page on where you view pokemon details and a direct search **DONE**
 
-6. Provide test using any test framework (jest, jasminejs or any other test framework you want)
+6. Provide test using any test framework (jest, jasminejs or any other test framework you want) **DONE**
 7. Readme on how to setup and start your application **DONE**
 8. Implement modular and component based implementation **DONE**
 

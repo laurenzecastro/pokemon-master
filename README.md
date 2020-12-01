@@ -19,6 +19,17 @@ $ npm run generate
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
+## Checking project on dev server
+
+After cloning the repository:
+
+```
+$ npm run build
+$ npm run start
+```
+
+An IP address with port number will be exposed, allowing access for checking the project
+
 ## Deploying on Heroku
 
 Follow the steps found in https://nuxtjs.org/faq/heroku-deployment/
