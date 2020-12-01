@@ -1,5 +1,5 @@
 <template>
-  <div id="top-companies-pagination-block" class="pagination-block">
+  <div id="top-pagination-block" class="pagination-block">
     <div class="pagination-first" data-cy="pagination_first">
       <a class="arrow-link" @click="navigateToPage(1)">
         &nbsp;&nbsp;<span class="mobile-hidden">FIRST</span>
